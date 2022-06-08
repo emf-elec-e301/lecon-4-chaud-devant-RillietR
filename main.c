@@ -49,6 +49,8 @@
  */
 void main(void)
 {
+    double dist_us;
+    uint16_t distancemm;
     // initialize the device
     SYSTEM_Initialize();
 
@@ -76,7 +78,9 @@ void main(void)
          *   uint16_t yeux_convertir_impulsion_vers_distance_mm(double largeur_impulsion_us)
          * 
          */
-        
+        yeux_start_mesure();
+        dist_us=yeux_get_largeur_impulsion_us();
+        distancemm=yeux_convertir_impulsion_vers_distance_mm(dist_us);
 
     }
 }
